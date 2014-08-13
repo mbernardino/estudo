@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="person" 
+		class="br.com.jm.spring.ioc.beans.person.Person">
+		
+		<!-- uma forma de se fazer inject -->
+	
+		<!-- injeção normal -->
+		<property name="name" value="Zé Ruela" />
+		<property name="age" value="100" />
+		
+		<!-- injeção de list -->
+		 <property name="hobbies">
+		 	<list>
+		 		<value>Swimming</value>
+		 		<value>Soccer</value>
+		 	</list>
+		 </property>
+		 
+		 <!-- injeção de map -->
+		 <property name="otherAtributes">
+		 	<map>
+		 		<entry key="HEIGHT" value="1.75M" />
+		 		<entry key="WIGHT" value="80KG" />
+		 	</map>
+		 </property>
+		 
+		 
+		<!-- segunda forma de se fazer inject
+		<property name="verySimpleProperty">
+			<value>New value, injected in another way!</value>
+		</property>
+		 -->
+		
+	</bean>
+
+</beans>
