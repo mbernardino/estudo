@@ -29,7 +29,6 @@
 		 	</map>
 		 </property>
 		 
-		 
 		<!-- segunda forma de se fazer inject
 		<property name="verySimpleProperty">
 			<value>New value, injected in another way!</value>
@@ -37,5 +36,14 @@
 		 -->
 		
 	</bean>
+
+	<!-- external bean exemple -->
+	<bean name="address"
+		class="br.com.jm.spring.ioc.beans.person.Address">
+			<property name="street" value="Rua dos Bobos" />
+			<property name="number" value="0" />
+	</bean>
+
+
 
 </beans>
