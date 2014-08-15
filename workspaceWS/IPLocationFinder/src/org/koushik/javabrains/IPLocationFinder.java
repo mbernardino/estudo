@@ -18,7 +18,6 @@ public class IPLocationFinder {
 			GeoIP geoIP = geoIPServiceSoap.getGeoIP(ipAddress);
 			//IP test > (www.google.com) 173.194.118.36
 			//IP test > (www.google.com.br) 173.194.118.159
-			//IP test > (www.ciandt.com) 216.239.38.21
 			//IP test > (www.unicamp.br) 143.106.10.174
 			System.out.println("IP ............: "	+	geoIP.getIP());
 			System.out.println("Country Code ..: " 	+ 	geoIP.getCountryCode());
