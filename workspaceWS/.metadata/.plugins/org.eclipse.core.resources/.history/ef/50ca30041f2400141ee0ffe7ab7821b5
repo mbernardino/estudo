@@ -1,0 +1,27 @@
+package org.koushik.javabrains;
+
+import net.webservicex.GeoIP;
+import net.webservicex.GeoIPService;
+import net.webservicex.GeoIPServiceSoap;
+
+public class IPLocationFinder {
+	
+	public static void main(String[] args) {
+		if(args.length != 1){
+			System.out.println("You need to pass in one IP address...");
+		}
+		else{
+			String ipAddress = args[0];
+			GeoIPService geoIPService = new GeoIPService();
+			GeoIPServiceSoap geoIPServiceSoap = geoIPService.getGeoIPServiceSoap(); 
+			GeoIP geoIP = geoIPServiceSoap.getGeoIP(ipAddress);
+			System.out.println(geoIP.getIP());
+			System.out.println(geoIP.getCountryCode());
+			System.out.println(geoIP.getCountryName());
+			System.out.println(geoIP.getReturnCode());
+			System.out.println(geoIP.getReturnCodeDetails());
+			
+		}
+	}
+
+}
