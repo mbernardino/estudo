@@ -1,0 +1,10 @@
+package com.ciandt.testews;
+
+import com.ciandt.testews.business.ProductServiceImpl;
+
+public class ProductCatalog {
+
+	ProductServiceImpl productServer = new ProductServiceImpl();
+	
+	
+}

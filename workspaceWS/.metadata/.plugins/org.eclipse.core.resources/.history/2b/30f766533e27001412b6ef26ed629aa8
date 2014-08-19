@@ -1,0 +1,28 @@
+package com.ciandt.testews;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+import com.ciandt.testews.business.ProductServiceImpl;
+
+@WebService
+public class ProductCatalog {
+
+	ProductServiceImpl productServer = new ProductServiceImpl();
+	
+	@WebMethod
+	public List<String> geProductCategories(){
+		return productServer.getProductCategories();
+	}
+	@WebMethod
+	public List<String> getProducts(String category){
+		return productServer.getProducts(category);
+	}
+	@WebMethod
+	public boolean addProduct(String category, String product){
+		return productServer.addProduct(category, product);
+	}
+	
+}

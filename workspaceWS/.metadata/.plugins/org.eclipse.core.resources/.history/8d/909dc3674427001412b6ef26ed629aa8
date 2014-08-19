@@ -1,0 +1,52 @@
+package com.ciandt.testews;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebService;
+
+import com.ciandt.testews.business.ProductServiceImpl;
+import com.ciandt.testews.model.Product;
+
+@WebService(name="TestMartCatalog" , portName="TestMartCatalogPort", serviceName="TestMartCatalogService",
+			targetNamespace="http://testews.ciandt.com/")
+public class ProductCatalog implements ProductCatalogInterface {
+
+	ProductServiceImpl productServer = new ProductServiceImpl();
+	
+	/* (non-Javadoc)
+	 * @see com.ciandt.testews.ProductCatalogInterface#geProductCategories()
+	 */
+	@Override
+	@WebMethod(action="fetch_categories", operationName="fetchCategories")
+	public List<String> geProductCategories(){
+		return productServer.getProductCategories();
+	}
+	/* (non-Javadoc)
+	 * @see com.ciandt.testews.ProductCatalogInterface#getProducts(java.lang.String)
+	 */
+	@Override
+	@WebMethod
+	public List<String> getProducts(@WebParam(partName="category") String category){
+		return productServer.getProducts(category);
+	}
+	/* (non-Javadoc)
+	 * @see com.ciandt.testews.ProductCatalogInterface#addProduct(java.lang.String, java.lang.String)
+	 */
+	@Override
+	@WebMethod
+	public boolean addProduct(@WebParam(partName="category") String category, @WebParam(partName="product") String product){
+		return productServer.addProduct(category, product);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.ciandt.testews.ProductCatalogInterface#getProductsv2(java.lang.String)
+	 */
+	@Override
+	@WebMethod
+	public List<Product> getProductsv2(String category){
+		return productServer.getProductsv2(category);
+	}	
+	
+}

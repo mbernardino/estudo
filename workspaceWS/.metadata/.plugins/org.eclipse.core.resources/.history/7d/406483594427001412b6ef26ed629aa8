@@ -1,0 +1,20 @@
+package com.ciandt.testews;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+
+import com.ciandt.testews.model.Product;
+
+public interface ProductCatalogInterface {
+
+	public abstract List<String> geProductCategories();
+
+	public abstract List<String> getProducts(String category);
+
+	public abstract boolean addProduct(String category, String product);
+
+	public abstract List<Product> getProductsv2(String category);
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/home/mbernardino/Java/workspaceWS/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1481470308.index
+3742956748.index
+4195614100.index
+1038725154.index
+1570629013.index
+3870377976.index

@@ -1,0 +1,15 @@
+package com.ciandt.testews;
+
+import java.util.List;
+
+import com.ciandt.testews.business.ProductServiceImpl;
+
+public class ProductCatalog {
+
+	ProductServiceImpl productServer = new ProductServiceImpl();
+	
+	public List<String> geProductCategories(){
+		return productServer.getProductCategories();
+	}
+	
+}

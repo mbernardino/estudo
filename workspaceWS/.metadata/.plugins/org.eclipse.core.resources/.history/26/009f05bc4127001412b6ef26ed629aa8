@@ -1,0 +1,30 @@
+package com.ciandt.testews;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebService;
+
+import com.ciandt.testews.business.ProductServiceImpl;
+
+@WebService(name="TestMartCatalog" , portName="TestMartCatalogPort", serviceName="TestMartCatalogService",
+			targetNamespace="http://testews.ciandt.com/")
+public class ProductCatalog {
+
+	ProductServiceImpl productServer = new ProductServiceImpl();
+	
+	@WebMethod(action="fetch_categories", operationName="fetchCategories")
+	public List<String> geProductCategories(){
+		return productServer.getProductCategories();
+	}
+	@WebMethod
+	public List<String> getProducts(@WebParam(partName="category") String category){
+		return productServer.getProducts(category);
+	}
+	@WebMethod
+	public boolean addProduct(@WebParam(partName="category") String category, @WebParam(partName="product") String product){
+		return productServer.addProduct(category, product);
+	}
+	
+}
