@@ -1,0 +1,15 @@
+ Git: removendo arquivos deletados do versionamento
+
+Para remover os arquivos deletados que antes haviam sido versionados, execute:
+
+git ls-files --deleted | xargs git rm
+
+Feito isso, adicione (add .) e faça commit novamente.
+
+OU
+
+git add -u
+
+E faça commit normalmente.
+Note que -u não adiciona arquivos novos ao versionamento, apenas atualiza os já adicionados e remove os deletados.
+
