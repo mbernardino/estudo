@@ -1,11 +1,15 @@
 package com.simple.programmer;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class User {
 
 	private int id;
 	private String name;
-	private int total;
-	private int goal;
+
+	private ProteinData proteinData = new ProteinData();
+	private Set<UserHistory> history = new HashSet<UserHistory>();
 	
 	public User(){super();}
 	
@@ -15,32 +19,38 @@ public class User {
 	public String getName() {
 		return name;
 	}
-	public int getTotal() {
-		return total;
+	public ProteinData getProteinData() {
+		return proteinData;
 	}
-	public int getGoal() {
-		return goal;
-	}
+	public Set<UserHistory> getHistory() {
+		return history;
+	}	
 	public void setId(int id) {
 		this.id = id;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void setTotal(int total) {
-		this.total = total;
+	public void setProteinData(ProteinData proteinData) {
+		this.proteinData = proteinData;
 	}
-	public void setGoal(int goal) {
-		this.goal = goal;
-	}
+	public void setHistory(Set<UserHistory> history) {
+		this.history = history;
+	}	
 	
+	@Override
 	public String toString(){
 		return(
 				"ID: " + id + "\r\n" +
 				"Name: " + name + "\r\n" +
-				"Total: " + total + "\r\n" +
-				"Goal: " + goal + "\r\n"
+				"Total: " + getProteinData().getTotal() + "\r\n" +
+				"Goal: " + getProteinData().getGoal() + "\r\n"
 				);
 	}
+
+
+
+
+	
 	
 }

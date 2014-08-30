@@ -7,8 +7,10 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.rules.Timeout;
 
 import com.simple.programmer.User;
 
@@ -50,8 +52,12 @@ public class ProgramTest {
 		assertEquals("Esperado 10", 10,  user.getTotal());
 	}
 	
-	@Ignore
-	@Test(timeout = 200)
+	@Rule
+	public Timeout timeOut = new Timeout(20);
+	
+	@Test
+//	@Ignore
+//	@Test(timeout = 200)
 	@Category(GoodTestCategory.class)
 	public void badTest(){
 		for(int i = 0; i < 1000000000; i++){

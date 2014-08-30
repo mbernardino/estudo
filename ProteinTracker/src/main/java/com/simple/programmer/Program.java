@@ -1,5 +1,7 @@
 package com.simple.programmer;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 
 public class Program {
@@ -13,8 +15,9 @@ public class Program {
 		User user = new User();
 		
 		user.setName("teste");
-		user.setGoal(250);
-		
+		user.getHistory().add(new UserHistory(new Date(), "Set name to Teste"));
+		user.getProteinData().setGoal(250);
+		user.getHistory().add(new UserHistory(new Date(), "Set the goal to 250"));
 		session.save(user);
 		
 		session.getTransaction().commit();
@@ -25,9 +28,13 @@ public class Program {
 		User loadeUser = (User) session.load(User.class, 1); // também poderia usar session.get(User.class, 1)
 		System.out.println(loadeUser);
 		
-//		pode-se alterar um atributo 
-		loadeUser.setTotal( loadeUser.getTotal() + 50);
+		for(UserHistory history : loadeUser.getHistory()){
+			System.out.println(history.getEntryTime().toString() + " " + history.getEntry());
+		}
 		
+//		pode-se alterar um atributo 
+		loadeUser.getProteinData().setTotal( loadeUser.getProteinData().getTotal() + 50);
+		loadeUser.getHistory().add(new UserHistory(new Date(), "Added 50 protein"));
 		System.out.println(loadeUser);
 		
 		session.getTransaction().commit();
