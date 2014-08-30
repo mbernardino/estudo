@@ -1,8 +1,8 @@
 package com.simple.programmer;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 public class User {
 
@@ -10,7 +10,7 @@ public class User {
 	private String name;
 
 	private ProteinData proteinData = new ProteinData();
-	private List<UserHistory> history = new ArrayList<UserHistory>();
+	private Map<String, UserHistory> history = new HashMap<String, UserHistory>();
 	
 	public User(){super();}
 	
@@ -23,7 +23,7 @@ public class User {
 	public ProteinData getProteinData() {
 		return proteinData;
 	}
-	public List<UserHistory> getHistory() {
+	public Map<String, UserHistory> getHistory() {
 		return history;
 	}	
 	public void setId(int id) {
@@ -35,7 +35,7 @@ public class User {
 	public void setProteinData(ProteinData proteinData) {
 		this.proteinData = proteinData;
 	}
-	public void setHistory(List<UserHistory> history) {
+	public void setHistory(Map<String, UserHistory> history) {
 		this.history = history;
 	}	
 	
