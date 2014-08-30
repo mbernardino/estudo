@@ -1,6 +1,7 @@
 package com.simple.programmer;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class User {
@@ -9,7 +10,7 @@ public class User {
 	private String name;
 
 	private ProteinData proteinData = new ProteinData();
-	private Set<UserHistory> history = new HashSet<UserHistory>();
+	private List<UserHistory> history = new ArrayList<UserHistory>();
 	
 	public User(){super();}
 	
@@ -22,7 +23,7 @@ public class User {
 	public ProteinData getProteinData() {
 		return proteinData;
 	}
-	public Set<UserHistory> getHistory() {
+	public List<UserHistory> getHistory() {
 		return history;
 	}	
 	public void setId(int id) {
@@ -34,7 +35,7 @@ public class User {
 	public void setProteinData(ProteinData proteinData) {
 		this.proteinData = proteinData;
 	}
-	public void setHistory(Set<UserHistory> history) {
+	public void setHistory(List<UserHistory> history) {
 		this.history = history;
 	}	
 	

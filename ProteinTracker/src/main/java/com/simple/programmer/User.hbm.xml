@@ -20,13 +20,14 @@
 			</property>
 		</component>
 		
-		<set name="history" table="USER_HISTORY">
+		<list name="history" table="USER_HISTORY">
 			<key column="ID"/>
+			<list-index column="POSITION" />
 			<composite-element class="com.simple.programmer.UserHistory">
 				<property name="entryTime" type="date" column="ENTRY_TIME" />
 				<property name="entry" type="java.lang.String" column="ENTRY" />
 			</composite-element>
-		</set>
+		</list>
 		
 	</class>
 </hibernate-mapping>
