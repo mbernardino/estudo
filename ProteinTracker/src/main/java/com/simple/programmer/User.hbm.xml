@@ -20,14 +20,16 @@
 			</property>
 		</component>
 		
-		<map name="history" table="USER_HISTORY">
-			<key column="ID"/>
-			<map-key type="string" column="MAP_IDENTIFIER" />
-			<composite-element class="com.simple.programmer.UserHistory">
+		<idbag name="history" table="USER_HISTORY">
+			<collection-id type="int" column="ID">
+				<generator class="increment" />
+			</collection-id>
+			<key column="USER_ID"/>
+				<composite-element class="com.simple.programmer.UserHistory">
 				<property name="entryTime" type="date" column="ENTRY_TIME" />
 				<property name="entry" type="java.lang.String" column="ENTRY" />
 			</composite-element>
-		</map>
+		</idbag>
 		
 	</class>
 </hibernate-mapping>
