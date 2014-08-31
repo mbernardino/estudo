@@ -20,16 +20,11 @@
 			</property>
 		</component>
 		
-		<idbag name="history" table="USER_HISTORY">
-			<collection-id type="int" column="ID">
-				<generator class="increment" />
-			</collection-id>
+		<list name="history" table="USER_HISTORY" inverse="true" cascade="save-update">			
 			<key column="USER_ID"/>
-				<composite-element class="com.simple.programmer.UserHistory">
-				<property name="entryTime" type="date" column="ENTRY_TIME" />
-				<property name="entry" type="java.lang.String" column="ENTRY" />
-			</composite-element>
-		</idbag>
+				<list-index column="POSITION" />
+			    	<one-to-many class="com.simple.programmer.UserHistory"/>
+		</list>
 		
 	</class>
 </hibernate-mapping>

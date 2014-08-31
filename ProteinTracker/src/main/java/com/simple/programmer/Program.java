@@ -1,7 +1,6 @@
 package com.simple.programmer;
 
 import java.util.Date;
-import java.util.Map.Entry;
 
 import org.hibernate.Session;
 
@@ -16,9 +15,9 @@ public class Program {
 		User user = new User();
 		
 		user.setName("teste");
-		user.getHistory().add(new UserHistory(new Date(), "Set name to Teste"));
+		user.addHistory(new UserHistory(new Date(), "Set name to Teste"));
 		user.getProteinData().setGoal(250);
-		user.getHistory().add(new UserHistory(new Date(), "Set the goal to 250"));
+		user.addHistory(new UserHistory(new Date(), "Set the goal to 250"));
 		session.save(user);
 		
 		session.getTransaction().commit();
@@ -35,7 +34,7 @@ public class Program {
 		
 //		pode-se alterar um atributo 
 		loadeUser.getProteinData().setTotal( loadeUser.getProteinData().getTotal() + 50);
-		loadeUser.getHistory().add(new UserHistory(new Date(), "Added 50 protein"));
+		loadeUser.addHistory(new UserHistory(new Date(), "Added 50 protein"));
 		System.out.println(loadeUser);
 		
 		session.getTransaction().commit();
