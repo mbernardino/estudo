@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 31, 2014 8:23:22 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.simple.programmer.ProteinData" table="TBL_PROTEIN_DATA">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="foreign">
+            	<param name="property">user</param>
+            </generator>
+        </id>
+        <one-to-one name="user" class="com.simple.programmer.User" constrained="true" />
+        <property name="total" type="int">
+            <column name="TOTAL" />
+        </property>
+        <property name="goal" type="int">
+            <column name="GOAL" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -8,10 +8,12 @@ public class User {
 	private int id;
 	private String name;
 
-	private ProteinData proteinData = new ProteinData();
+	private ProteinData proteinData;
 	private List<UserHistory> history = new ArrayList<UserHistory>();
 	
-	public User(){super();}
+	public User(){
+		setProteinData(new ProteinData());
+	}
 	
 	public int getId() {
 		return id;
@@ -33,6 +35,7 @@ public class User {
 	}
 	public void setProteinData(ProteinData proteinData) {
 		this.proteinData = proteinData;
+		proteinData.setUser(this);
 	}
 	public void setHistory(List<UserHistory> history) {
 		this.history = history;

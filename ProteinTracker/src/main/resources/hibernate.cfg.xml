@@ -13,5 +13,6 @@
   <property name="hibernate.hbm2ddl.auto">create</property>
   <mapping resource="com/simple/programmer/User.hbm.xml"/>
   <mapping resource="com/simple/programmer/UserHistory.hbm.xml"/>
+  <mapping resource="com/simple/programmer/ProteinData.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

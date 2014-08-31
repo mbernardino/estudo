@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Aug 24, 2014 7:10:45 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-	<class name="com.simple.programmer.User" table="tbl_users">
+	<class name="com.simple.programmer.User" table="TBL_USERS">
 		<id name="id" type="int">
 			<column name="ID" />
 			<generator class="identity" />
@@ -11,14 +11,8 @@
 		<property name="name" type="java.lang.String">
 			<column name="NAME" />
 		</property>
-		<component name="ProteinData">
-			<property name="total" type="int">
-				<column name="TOTAL" />
-			</property>
-			<property name="goal" type="int">
-				<column name="GOAL" />
-			</property>
-		</component>
+		
+		<one-to-one name="proteinData" class="com.simple.programmer.ProteinData" cascade="save-update" />
 		
 		<list name="history" table="USER_HISTORY" inverse="true" cascade="save-update">			
 			<key column="USER_ID"/>

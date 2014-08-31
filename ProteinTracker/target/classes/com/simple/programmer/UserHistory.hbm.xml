@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Aug 30, 2014 11:01:07 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.simple.programmer.UserHistory" table="USERHISTORY">
+    <class name="com.simple.programmer.UserHistory" table="TBL_USER_HISTORY">
         <id name="id" type="int">
             <column name="ID" />
             <generator class="increment" />
